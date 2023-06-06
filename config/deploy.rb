@@ -141,11 +141,13 @@ before 'bundle:install', 'bundle:configure'
 # ==========================================[ TARGETS ]==========================================
 
 TARGETS = [
-  [:live, :mbis_live,      'ncr-prescr-app1.phe.gov.uk', 22, 'mbis_live',      true],
-  [:beta, :mbis_beta,      'ncr-prescr-app2.phe.gov.uk', 22, 'mbis_beta',      true],
-  [:live, :mbis_god_live,  'ncr-prescr-app1.phe.gov.uk', 22, 'mbis_god_live',  false],
-  [:beta, :mbis_brca_beta, 'ncr-prescr-app2.phe.gov.uk', 22, 'mbis_brca_beta', false]
+#  [:live, :mbis_live,      'ncr-prescr-app1.phe.gov.uk', 22, 'mbis_live',      true],
+#  [:beta, :mbis_beta,      'ncr-prescr-app2.phe.gov.uk', 22, 'mbis_beta',      true],
+#  [:live, :mbis_god_live,  'ncr-prescr-app1.phe.gov.uk', 22, 'mbis_god_live',  false],
+#  [:beta, :mbis_brca_beta, 'ncr-prescr-app2.phe.gov.uk', 22, 'mbis_brca_beta', false]
 ]
+
+warn 'Deployments have now moved to using https://github.com/NHSDigital/data_management_system.git'
 
 TARGETS.each do |env, name, app, port, app_user, include_assets|
   add_target(env, name, app, port, app_user, include_assets)
